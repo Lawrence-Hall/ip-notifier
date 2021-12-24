@@ -5,18 +5,10 @@ import smtplib
 ip = get('https://api.ipify.org').content.decode('utf8')
 ipf = format(ip)
 
-mydb = mysql.connector.connect(
-  host="",
-  user="",
-  password="",
-  database=""
-)
-d = mysql.connector.connect(
-  host="",
-  user="",
-  password="",
-  database=""
-)
+data = [host="", user="", password="", database=""]
+
+mydb = mysql.connector.connect(data)
+d = mysql.connector.connect(data)
 
 # grabbing the old ip
 mycursor = mydb.cursor()
